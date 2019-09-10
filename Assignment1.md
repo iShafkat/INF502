@@ -12,7 +12,7 @@ The screenshot below shows:
 
 2. Try `git log --graph --all` to see the commit tree. What do you see?
 ```
-
+It shows all the latest commits to the branches.
 
 ```
 
@@ -20,14 +20,14 @@ The screenshot below shows:
    Summarize the difference from master to the other branch.
 
 ```
-
+The green lines are in the current branch (master) whereas the red lines are in the other branch not in the current branch. 
 
 ```
 
 4. Write a command sequence to merge the non-master branch into `master`
 
 ```
-
+git merge BRANCH_NAME
 
 ```
 
@@ -36,6 +36,8 @@ The screenshot below shows:
 and (ii) change to this branch
 
 ```
+git branch math
+git checkout math
 
 
 ```
