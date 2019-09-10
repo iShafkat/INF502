@@ -6,9 +6,9 @@
     - Use `git log --decorate` to explore the structure of commits.
 
 ```
-![image](https://github.com/iShafkat/INF502/blob/master/Docs/ans1.JPG)
-
+The screenshot below shows:
 ```
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/ans1.JPG)
 
 2. Try `git log --graph --all` to see the commit tree. What do you see?
 ```
