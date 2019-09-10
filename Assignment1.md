@@ -50,7 +50,8 @@ print 2+2
 
 7. Write a command (or sequence) to commit your changes
 ```
-
+git add B.py
+git commit -m "Hello"
 
 ```
 
@@ -61,25 +62,27 @@ print 'hello world!'
 
 9. Write a command sequence to merge the `math` branch into `master` and describe what happened
 ```
-
+git merge math
+There happens a conflict and to avoid the conflict I have to change the file manually.
 
 ```
    
 10. Write a set of commands to abort the merge
 ```
-
+git merge --abort
 
 ```
    
 11. Now repeat item 9, but proceed with the manual merge (Editing B.py). All implemented methods are needed. Explain your procedure
 ```
-
+To avoid conflict I had to open the B.py in editor and remove two lines and then use add command and merge commnd in git. 
 
 ```
 
 12. Write a command (or set of commands) to proceed with the merge and make `master` branch up-to-date
 ```
-
+git add B.py
+git commit -m "merged conflict solved"
 
 ```
 
@@ -87,6 +90,6 @@ print 'hello world!'
 
 Report your experience of making this submission, including the steps followed, commands used, and hurdles faced (within the file you created for the **Part 1**.
 ```
-
+I had not used git before. But I found git a great tool to store and update softwares developed in my research.
 
 ```
