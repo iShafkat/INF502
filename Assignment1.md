@@ -51,7 +51,7 @@ print 2+2
 7. Write a command (or sequence) to commit your changes
 ```
 git add B.py
-git commit -m "Hello"
+git commit -m "changed"
 
 ```
 
