@@ -6,7 +6,7 @@
     - Use `git log --decorate` to explore the structure of commits.
 
 ```
-
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/ans1.JPG)
 
 ```
 
