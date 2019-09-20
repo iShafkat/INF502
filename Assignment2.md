@@ -11,4 +11,4 @@ Answer-3:
 In the function, the grades_in is shorted in a reverse order. then the total is calculated excluding the last two elements. Then average the total. Finally an If...else condition is tested to find the letter grade.
 ![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_3a.JPG)
 ![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_3b.JPG)
-![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_3c.JPG)
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW_3c.JPG)
