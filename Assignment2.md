@@ -12,3 +12,9 @@ In the function, the grades_in is shorted in a reverse order. then the total is 
 ![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_3a.JPG)
 ![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_3b.JPG)
 ![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW_3c.JPG)
+
+Answer-4:
+Each element of the list called numbers is tested whether it is even or odd. If it is even then it is stored in a new list otherwise in another list. Then the two lists appended to the new list.
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_4a.JPG)
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_4b.JPG)
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/HW2_4c.JPG)
