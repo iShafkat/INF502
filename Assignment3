@@ -53,8 +53,6 @@ def info(symbol, periodic_table):
         for key, value in info.items():
             print(str(key) + ": " + str(value))
     
-
-
 def periodic_property(periodic_table):
     print("Choose from the following Options:")
     print("Press 1 for symbol")
