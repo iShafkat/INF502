@@ -1,1 +1,130 @@
 # HW-1
+def main():
+    print("Please provide the balance of 5 wallets")
+    balance =[]
+    for i in range(5):
+        value =int(input())
+        balance.append(value)
+    print("The  fattest wallet has " + str(max(balance)) +" $ value in it")
+    print("The skinniest wallet has "+ str(min(balance)) +" $ value in it")
+    print("All together, these wallets hav "+ str(sum(balance))+" $ value in them")
+    print("All together, the total value of these wallets is worth "+ str(sum(balance)*10)+" dimes" )
+if __name__== "__main__":
+  main()
+
+
+
+
+
+#HW-2
+import json
+def main():    
+    periodic_table = {}
+    with open('PT.json') as pt_json:
+        data = json.load(pt_json)
+        for p in data['elements']:
+            properties = {'symbol': p['symbol'], 'name': p['name'], 'number': p['number'], 'row': p['xpos'], 'column': p['ypos']}
+            periodic_table.update({p['symbol']: properties})
+    while True:
+        print("Press the corresponding number for below options: ")
+        print("1. See info of a particular element")
+        print("2. See a particular property for all respective elements")
+        print("3. Enter a new element")
+        print("4. Change attributes of an element")
+        print("5. Exit the program")
+        select = int(input())
+        if select == 1:
+            symbol = input("Enter the element symbol\n")
+            info(symbol, periodic_table)
+        elif select == 2:
+            periodic_property(periodic_table)
+        elif select == 3:
+            new_element(periodic_table)
+        elif select == 4:
+            update_element(periodic_table)
+        elif select == 5:
+            break
+        else:
+            print("invalid selection")
+
+
+def info(symbol, periodic_table):
+        info = periodic_table[symbol]
+        for key, value in info.items():
+            print(str(key) + ": " + str(value))
+    
+
+
+def periodic_property(periodic_table):
+    print("Choose from the following Options:")
+    print("Press 1 for symbol")
+    print("Press 2 for name")
+    print("Press 3 for atomic number")
+    print("Press 4 for row")
+    print("Press 5 for column\n")
+    select = int(input())
+    property = ""
+    if select == 1:
+        property = "symbol"
+    elif select == 2:
+        property = "name"
+    elif select == 3:
+        property = "number"
+    elif select == 4:
+        property = "row"
+    elif select == 5:
+        property = "column"
+    else:
+        print("you entered invalid value")
+        return
+
+    try:
+        for key, value in periodic_table.items():
+            print(value[property])
+    except:
+        print("This property is not found")
+
+
+def new_element(periodic_table):
+        name = input("enter the name of the element\n")
+        number = input("enter atomic number\n")
+        row = input("enter the row number of the element in periodic table\n")
+        col = input("enter the column number of the element in periodic table\n")
+        symbol = input("enter chemical symbol of the element\n")
+        properties = {'symbol': symbol, 'name': name, 'number': number, 'row': row, 'column': col}
+        periodic_table.update({symbol: properties})
+
+def update_element(periodic_table):
+    
+        symbol = input("enter the chemical symbol of the element\n")
+        properties = periodic_table[symbol]
+
+        print("Choose from the following options:")
+        print("Press 1 to update name")
+        print("Press 2 to update atomic number")
+        print("Press 3 to update row")
+        print("Press 4 to update column\n")
+
+        select = int(input())
+
+        if select == 1:
+            name = input("Enter the name:\n")
+            properties['name'] = name
+        elif select == 2:
+            number = input("Enter atomic number:\n")
+            properties['number'] = number
+        elif select == 3:
+            row = input("Enter row number:\n")
+            properties['row'] = row
+        elif select == 4:
+            col = input("Enter column number:\n")
+            properties['column'] = col
+        else:
+            print("invalid selection\n")
+            return
+
+        print("property updated successfully\n")
+
+if __name__ == "__main__":
+    main()
+    
