@@ -77,13 +77,11 @@ def periodic_property(periodic_table):
     else:
         print("you entered invalid value")
         return
-
     try:
         for key, value in periodic_table.items():
             print(value[property])
     except:
         print("This property is not found")
-
 
 def new_element(periodic_table):
         name = input("enter the name of the element\n")
@@ -95,18 +93,14 @@ def new_element(periodic_table):
         periodic_table.update({symbol: properties})
 
 def update_element(periodic_table):
-    
         symbol = input("enter the chemical symbol of the element\n")
         properties = periodic_table[symbol]
-
         print("Choose from the following options:")
         print("Press 1 to update name")
         print("Press 2 to update atomic number")
         print("Press 3 to update row")
         print("Press 4 to update column\n")
-
         select = int(input())
-
         if select == 1:
             name = input("Enter the name:\n")
             properties['name'] = name
@@ -122,7 +116,6 @@ def update_element(periodic_table):
         else:
             print("invalid selection\n")
             return
-
         print("property updated successfully\n")
 
 if __name__ == "__main__":
