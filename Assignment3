@@ -47,7 +47,6 @@ def main():
         else:
             print("invalid selection")
 
-
 def info(symbol, periodic_table):
         info = periodic_table[symbol]
         for key, value in info.items():
