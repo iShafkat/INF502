@@ -164,3 +164,9 @@ if __name__ == "__main__":
 
 Approach-2:
 ![image](https://github.com/iShafkat/INF502/blob/master/approach2.JPG)
+
+
+#Sequence-1:
+ACTGATCAC
+#Sequence-2:
+TTAGCTCGA
