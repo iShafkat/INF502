@@ -1,4 +1,4 @@
 # Programming_Assignment-1
 Description:
 I divided the problem into five parts and created five different functions in my program.
-In the main function,
+In the main function, I read the two DNA sequence files and took all the user defined inputs. I used the try/except blocks for possible errors in the user inputs. I also checked the DNA sequences whether all the characters are neucliotides or not. 
