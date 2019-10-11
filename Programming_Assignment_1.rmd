@@ -1,8 +1,13 @@
 # Programming_Assignment-1
 Description:
 I divided the problem into five parts and created five different functions in my program.
+
 In the main function: 
 I read the two DNA sequence files and took all the user defined inputs.
 I used the try/except blocks for possible errors in the user inputs. 
 I also checked the DNA sequences whether all the characters are neucliotides or not. 
 I called the function "match_shift" to match the sequences.
+
+In the match_shift function:
+Four arguments: the two DNA sequences, the maximum number of shifts (defined by the user) and 
+a Boolean(to pass weather to check the contiguous match or not) is passed to the function.
