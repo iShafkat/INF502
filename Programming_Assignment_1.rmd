@@ -159,7 +159,7 @@ if __name__ == "__main__":
 
 # Result:
 
-![image](https://github.com/iShafkat/INF502/blob/master/approach1.JPG)
+![image](https://github.com/iShafkat/INF502/blob/master/Docs/ans1.JPG)
 
 
 Approach-2:
