@@ -1,1 +1,4 @@
-
+# Programming_Assignment-1
+Description:
+I divided the problem into five parts and created five different functions in my program.
+In the main function,
