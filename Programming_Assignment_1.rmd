@@ -11,3 +11,150 @@ I called the function "match_shift" to match the sequences.
 In the match_shift function:
 Four arguments: the two DNA sequences, the maximum number of shifts (defined by the user) and 
 a Boolean(to pass weather to check the contiguous match or not) is passed to the function.
+This function calls three other functions: 'simple_match', 'contiguous_match', 'output_sequence'.
+
+Matching Process: 
+At first, the two sequences are compared (without any shift) and 
+the number of matches are stored as 'current_score' and 'maximum_score'. 
+Then one sequence is shifted by one place and compared with the other one. 
+In each case, the match is stored in the current_score and compared with the maximum_score.
+If current_score is greater or equal than the maxuimum_score then the maximum_score is updated and the 
+respective two sequences are traced.
+To find the maximum chain, the two sequences are checked and kept trace the maximum contiguous number.
+
+# Source Code:
+import sys
+def main():
+    token =False
+    file1 = input("Enter first filename\n")
+    file2 = input("Enter second filename\n")
+    try:
+        max_shift = int(input("Enter the maximum shift\n"))
+    except ValueError:
+        print('This input should be an integer value')
+        token =True
+    try:
+        approach =int(input('Please Enter the number of the approach you prefer:\n 1. Number of Matches\n 2. Maximum Chain\n'))
+    except ValueError:
+        print('This input should be an integer value')
+        token =True
+    seq1, seq2 = "", ""
+    try:
+        with open(file1, mode="r") as file:
+            for lines in file.readlines():
+                seq1 += "".join(lines.split())
+    except:
+        print('The input file is not found')
+        token =True
+    try:
+        with open(file2, mode="r") as file:
+            for lines in file.readlines():
+                seq2 += "".join(lines.split())
+    except:
+        print('The input file is not found')
+        token =True
+    if len(seq1)==len(seq2):
+        token =False
+    else:
+        token =True
+        print('The two sequences do not contain equal number of neucliotides')
+    test = "ACGT"
+    for char in range(len(seq1)):
+        if seq1[char] not in test:
+            print("The sequence should contain only A,T,G and C.")
+            token =True
+        if seq2[char] not in test:
+            print("The sequence should contain only A,T,G and C.")
+            token =True
+    
+    if token ==False:
+        seq1, seq2 = seq1.upper(), seq2.upper()
+        match_shift(seq1, seq2, max_shift, False) if approach==1 else match_shift(seq1, seq2, max_shift, True)
+    else:
+        print('Error Occured')
+    
+def simple_match(seq1, seq2):
+    count = 0
+    for i in range(len(seq1)):
+        if seq1[i] == seq2[i]:
+            count = count+1
+    return count
+
+def contiguous_match(seq1, seq2):
+    count, maximum, trace = 0, 0, 0
+    while trace < len(seq1):
+        while trace < len(seq1) and (seq1[trace] == seq2[trace]):
+            count += 1
+            trace += 1
+        maximum = count if count > maximum else maximum
+        trace += 1
+        count = 0
+    return maximum
+
+def output_sequence(seq1, seq2, shifted_sequence, shift_by):
+    li1 = ""
+    li2 = ""
+    if shift_by > 0:
+        if shifted_sequence == 1:
+            li1 = "SEQ1 -> " + "_" * shift_by + seq1
+            li2 = "SEQ2 -> " + seq2 + "_" * shift_by
+        else:
+            li1 = "SEQ1 -> " + seq1 + "_" * shift_by
+            li2 = "SEQ2 -> " + "_" * shift_by + seq2
+    else:
+        li1 = "SEQ1 -> " + seq1
+        li2 = "SEQ2 -> " + seq2
+    print(li1)
+    print(li2)
+
+def match_shift(seq1, seq2, max_shift, contiguous):
+    shifted_sequence = 0
+    shift_by = 0
+    if contiguous == False:
+        maximum_score = simple_match(seq1, seq2)
+    else:
+        maximum_score =contiguous_match(seq1, seq2)
+    for shift in range(max_shift):
+        shift += 1
+        s1 = seq1[:-shift]
+        s2 = seq2[shift:]
+        if contiguous == False:
+            current_score = simple_match(s1, s2)  
+        else:
+            current_score = contiguous_match(s1, s2)
+        if current_score >= maximum_score:
+            shifted_sequence = 1 
+        else:
+            shifted_sequence =shifted_sequence
+        if current_score >= maximum_score:
+            shift_by = shift  
+        else:
+            shift_by = shift_by 
+        if current_score >= maximum_score:
+            maximum_score = current_score 
+        else: 
+            maximum_score =maximum_score
+        s1 = seq2[:-shift]
+        s2 = seq1[shift:]
+        if contiguous == False:
+            current_score = simple_match(s1, s2) 
+        else:
+            current_score =contiguous_match(s1, s2)
+        if current_score >= maximum_score:
+            shifted_sequence = 2  
+        else:
+            shifted_sequence =shifted_sequence
+        if current_score < maximum_score:
+            shift_by =shift_by
+        else:
+            shift_by = shift
+        if current_score < maximum_score:
+            maximum_score=maximum_score  
+        else:
+            maximum_score= current_score
+    output_sequence(seq1, seq2, shifted_sequence, shift_by)
+if __name__ == "__main__":
+    main()
+
+
+# Result:
