@@ -170,3 +170,14 @@ Approach-2:
 ACTGATCAC
 #Sequence-2:
 TTAGCTCGA
+
+#Number of Matches Approach:
+The hurdle I faced is to shift a sequence (find the exact command) and also faced problem in printing the output. 
+I had to search in internet and also discuss with my peer classmates. 
+Developing the algorithm and desgining the process help me to improve my programming skills. 
+This is benificial.
+
+#Maximum Chain:
+Here, the hurdle is to keep trace of the contiguous match and design this contiguous match algorithm
+I set the solution through discussing with my peer classmates.
+This approach helps me nurturing my algorithmic skills and also enriches my python skills.
