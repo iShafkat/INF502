@@ -1,4 +1,4 @@
-# Programming_Assignment-1
+# Programming_Project-1
 Description:
 I divided the problem into five parts and created five different functions in my program.
 
